@@ -1,6 +1,6 @@
 #------------------ Srcs & Objs -------------------#
 
-SRCS = parser.c check_map.c display_map.c so_long.c
+SRCS = 
 OBJS = $(SRCS:.c=.o)
 
 #----------------- Constant namings ---------------------#
@@ -15,17 +15,14 @@ LIB_INC = -Ilibft
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-MINILIB_DIR = /usr/include/minilibx-linux
-MLX_FLAGS = -L$(MINILIB_DIR) -lmlx -lXext -lX11 -lm
-
 #--------------------- RULES --------------------#
 
-NAME = so_long
+NAME = push_swap
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-		$(CC) $(CFLAGS) $(LIB_INC) $(OBJS) $(MLX_FLAGS) $(LIBFT) -o $(NAME)
+		$(CC) $(CFLAGS) $(LIB_INC) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 		@cd libft && make
