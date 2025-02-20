@@ -1,6 +1,6 @@
 #------------------ Srcs & Objs -------------------#
 
-SRCS = 
+SRCS = push_swap.c
 OBJS = $(SRCS:.c=.o)
 
 #----------------- Constant namings ---------------------#

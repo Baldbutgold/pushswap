@@ -5,9 +5,17 @@
 
 # define TRUE 1
 # define FALSE 0
+int		ft_atoi(const char *nptr);
 
-/*typedef struct s_map
+typedef struct s_node
 {
-}	t_map;*/
+	int	d;
+	int	i;
+	t_node	*n;
+	t_node	*p;
+}	t_node;
+
+
+
 
 #endif
