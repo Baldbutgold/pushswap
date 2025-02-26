@@ -5,17 +5,11 @@
 
 # define TRUE 1
 # define FALSE 0
-int		ft_atoi(const char *nptr);
 
-typedef struct s_node
+typedef struct s_list
 {
 	int	d;
-	int	i;
-	t_node	*n;
-	t_node	*p;
-}	t_node;
-
-
-
+	struct s_list *n;
+}	t_list;
 
 #endif

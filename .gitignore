@@ -1,1 +1,3 @@
 libft/.git
+*.out
+*.o
