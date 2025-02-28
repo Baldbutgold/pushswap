@@ -12,4 +12,6 @@ typedef struct s_list
 	struct s_list *n;
 }	t_list;
 
+void	free_grid(char **grid);
+
 #endif
