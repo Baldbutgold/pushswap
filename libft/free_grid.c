@@ -15,6 +15,7 @@
 void	free_grid(char **grid)
 {
 	int	i;
+
 	if (!grid)
 		return ;
 	i = 0;
