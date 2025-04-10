@@ -34,6 +34,7 @@ char	**return_string(int ac, char **av)
 	free(numbers);
 	return (arr);
 }
+
 int	check_string_space(char	*string)
 {
 	int	i;

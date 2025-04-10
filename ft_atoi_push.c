@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 int	ft_isspace(int c)
 {
@@ -19,15 +19,16 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi_push(const char *nptr)
 {
 	int	i;
-	int	num;
+	long	num;
 	int	sign;
 
 	i = 0;
 	num = 0;
 	sign = 1;
+	//I don't think I will need this function
 	while (ft_isspace(nptr[i]))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
@@ -39,7 +40,9 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		num = (num * 10) + (nptr[i] - '0');
+		if (num * sign > INT_MAX || (num * sign) < INT_MIN)
+			return (FALSE);
 		i++;
 	}
-	return (num * sign);
+	return ((int)num * sign);
 }

@@ -16,6 +16,7 @@
 char	**init_check(int ac, char **av)
 {
 	int		i;
+	int		j;
 	char	**arr;
 
 	i = 1;
@@ -33,6 +34,15 @@ char	**init_check(int ac, char **av)
 	{
 		if (check_string_characters(arr[i]) == 0)
 			return (free_grid(arr), ft_putstr_fd("Error\n", 2), NULL);
+		j = i + 1;
+		if (ft_atoi_push(arr[i]) == FALSE)
+			return (free_grid(arr), ft_putstr_fd("Error\n", 2), NULL);
+		while (arr[j])
+		{
+			if (ft_atoi_push(arr[i]) == ft_atoi_push(arr[j]))
+				return (free_grid(arr), ft_putstr_fd("Error\n", 2), NULL);
+			j++;
+		}
 		i++;
 	}
 	return (arr);
@@ -40,8 +50,13 @@ char	**init_check(int ac, char **av)
 
 int	main(int ac, char **av)
 {
+	t_list	*stack_a;
+	t_list	*stack_b;
 	char	**arr;
 	int i;
+
+	stack_a = NULL;
+	stack_b = NULL;	
 
 	if (ac > 1)
 		arr = init_check(ac, av);
@@ -52,6 +67,7 @@ int	main(int ac, char **av)
 	i = 0;
 	while (arr[i])
 		ft_printf("%s", arr[i++]);
+	free_grid(arr);
 }
 
 /*while (arr[i])*/

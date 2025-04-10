@@ -1,13 +1,13 @@
 #------------------ Srcs & Objs -------------------#
 
-SRCS = push_swap.c utils.c
+SRCS = push_swap.c utils.c ft_atoi_push.c
 OBJS = $(SRCS:.c=.o)
 
 #----------------- Constant namings ---------------------#
 
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra
+#CFLAGS = -Wall -Werror -Wextra
 LIB_INC = -Ilibft
 
 #------------------ Library Paths ------------------#

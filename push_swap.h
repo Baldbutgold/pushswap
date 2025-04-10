@@ -20,13 +20,16 @@
 
 typedef struct s_list
 {
-	int				d;
-	struct s_list	*n;
+	int				data;
+	int				index;
+	int				rank;
+	struct s_list	*next;
 }					t_list;
 
 void				free_grid(char **grid);
 int					check_string_characters(char *string);
 int					check_string_space(char *string);
 char				**return_string(int ac, char **av);
+int					ft_atoi_push(const char *str);
 
 #endif
