@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/11 16:10:36 by ael-hadj          #+#    #+#             */
+/*   Updated: 2025/04/11 16:10:36 by ael-hadj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_lstsize(t_list *lst)
@@ -32,7 +44,6 @@ void	ft_lstclear(t_list **lst)
 
 	if (!lst || !*lst)
 		return;
-	
 	current = *lst;
 	while (current)
 	{
@@ -77,37 +88,28 @@ t_list *ft_lstnew(int data)
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	
 	new->data = data;
-		new->next = NULL;
-	
+	new->next = NULL;
 	return (new);
 }
-
 
 int	get_max_bits(t_list *stack)
 {
 	t_list	*current;
 	int		max_rank;
 	int		max_bits;
-	int		temp;  // Move variable declaration to the beginning
+	int		temp;
 
 	if (!stack)
 		return (0);
-	
 	current = stack;
 	max_rank = current->rank;
-	
-	// Find the maximum rank in the list
 	while (current)
 	{
 		if (current->rank > max_rank)
 			max_rank = current->rank;
 		current = current->next;
 	}
-	
-
-	// Count the number of bits needed for the max_rank
 	max_bits = 0;
 	temp = max_rank;
 	while (temp > 0)
