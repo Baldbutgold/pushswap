@@ -48,5 +48,6 @@ t_list				*init_stack(int ac, char **av);
 t_list				*array_to_linked_list(char **arr);
 void				assign_ranks(t_list *stack);
 int					get_max_bits(t_list *stack);
+char				**init_check(int ac, char **av);
 
 #endif

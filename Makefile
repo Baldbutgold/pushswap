@@ -1,6 +1,12 @@
 #------------------ Srcs & Objs -------------------#
 
-SRCS = push_swap.c utils.c ft_atoi_push.c utils_2.c moves.c init.c
+SRCS = main.c \
+       input_validation.c \
+       input_parsing.c \
+       list_utils.c \
+       stack_init.c \
+       sort_utils.c
+
 OBJS = $(SRCS:.c=.o)
 
 #----------------- Constant namings ---------------------#
@@ -28,7 +34,7 @@ $(LIBFT):
 		@cd libft && make
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
+		@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 		$(RM) $(OBJS)
