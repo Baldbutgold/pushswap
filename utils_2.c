@@ -6,23 +6,13 @@
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:40:05 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/04/11 16:40:06 by ael-hadj         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:09:43 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_printlst(t_list *head)
-{
-	t_list	*ptr;
 
-	ptr = head;
-	while (ptr)
-	{
-		ft_printf("%d", ptr->rank);
-		ptr = ptr->next;
-	}
-}
 
 /*struct			node*/
 /*{*/

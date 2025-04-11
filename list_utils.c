@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:10:36 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/04/11 16:10:36 by ael-hadj         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:10:03 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,33 +42,6 @@ void	ft_lstclear(t_list **lst)
 	*lst = NULL;
 }
 
-t_list	*array_to_linked_list(char **arr)
-{
-	t_list	*stack;
-	t_list	*tail;
-	t_list	*new_node;
-	int		num;
-	int		i;
-
-	stack = NULL;
-	tail = NULL;
-	i = 0;
-	while (arr[i])
-	{
-		num = ft_atoi(arr[i]);
-		new_node = ft_lstnew(num);
-		if (!new_node)
-			return (ft_putstr_fd("Error\n", 2), ft_lstclear(&stack), NULL);
-		if (!stack)
-			stack = new_node;
-		else
-			tail->next = new_node;
-		tail = new_node;
-		i++;
-	}
-	return (stack);
-}
-
 t_list	*ft_lstnew(int data)
 {
 	t_list	*new;
@@ -81,29 +54,14 @@ t_list	*ft_lstnew(int data)
 	return (new);
 }
 
-int	get_max_bits(t_list *stack)
+void	ft_printlst(t_list *head)
 {
-	t_list	*current;
-	int		max_rank;
-	int		max_bits;
-	int		temp;
+	t_list	*ptr;
 
-	if (!stack)
-		return (0);
-	current = stack;
-	max_rank = current->rank;
-	while (current)
+	ptr = head;
+	while (ptr)
 	{
-		if (current->rank > max_rank)
-			max_rank = current->rank;
-		current = current->next;
+		ft_printf("%d", ptr->rank);
+		ptr = ptr->next;
 	}
-	max_bits = 0;
-	temp = max_rank;
-	while (temp > 0)
-	{
-		temp /= 2;
-		max_bits++;
-	}
-	return (max_bits);
 }

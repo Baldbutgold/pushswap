@@ -1,17 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:11:45 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/04/11 16:11:45 by ael-hadj         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:18:53 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
+
+int	check_string_space(char *string)
+{
+	int	i;
+
+	i = 0;
+	while (string[i])
+	{
+		if (ft_isspace(string[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	check_empty_and_spaces(char **av)
 {
@@ -53,36 +66,52 @@ int	check_numbers_and_duplicates(char **arr)
 	return (TRUE);
 }
 
-char	**init_check(int ac, char **av)
+int	ft_atoi_push(const char *nptr)
 {
-	char	**arr;
+	int		i;
+	long	num;
+	int		sign;
 
-	if (!check_empty_and_spaces(av))
-		return (NULL);
-	arr = return_string(ac, av);
-	if (!arr)
-		return (NULL);
-	if (!check_numbers_and_duplicates(arr))
+	i = 0;
+	num = 0;
+	sign = 1;
+	while (ft_isspace(nptr[i]))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
-		free_grid(arr);
-		ft_putstr_fd("Error\n", 2);
-		return (NULL);
+		if (nptr[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (arr);
+	while (ft_isdigit(nptr[i]))
+	{
+		num = (num * 10) + (nptr[i] - '0');
+		if (num * sign > INT_MAX || (num * sign) < INT_MIN)
+			return (FALSE);
+		i++;
+	}
+	return ((int)num * sign);
 }
 
-t_list	*init_stack(int ac, char **av)
+int	check_string_characters(char *string)
 {
-	t_list	*stack_a;
-	char	**arr;
+	int	i;
+	int	only_sign;
 
-	if (ac < 2)
-		return (NULL);
-	arr = init_check(ac, av);
-	if (!arr)
-		return (NULL);
-	stack_a = array_to_linked_list(arr);
-	free_grid(arr);
-	assign_ranks(stack_a);
-	return (stack_a);
+	i = 0;
+	only_sign = 0;
+	if (string[i] == '-' || string[i] == '+')
+	{
+		i++;
+		only_sign = 1;
+	}
+	while (string[i])
+	{
+		if (ft_isdigit(string[i]) == 0)
+			return (0);
+		i++;
+	}
+	if (only_sign == 1 && i == 1)
+		return (0);
+	return (1);
 }
