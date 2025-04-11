@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				data;
+	int				index;
 	int				rank;
 	struct s_list	*next;
 }					t_list;
@@ -39,5 +40,7 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 t_list				*init_stack(int ac, char **av);
 void				assign_ranks(t_list *stack);
 int					get_max_bits(t_list *stack);
+int					check_empty_and_spaces(char **av);
+int					check_numbers_and_duplicates(char **arr);
 
 #endif

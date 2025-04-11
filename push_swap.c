@@ -22,13 +22,10 @@ int	main(int ac, char **av)
 	if (!stack_a)
 		return (0);
 	stack_b = NULL;
-		
-	// Print the stack with ranks (already assigned in init_stack)
-ft_printlst(stack_a);
-	
 	// TODO: Implement radix sort using the ranks
-	
+	get_max_bits(stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
+
 	return (0);
 }

@@ -25,7 +25,6 @@ void	ft_printlst(t_list *head)
 	}
 }
 
-//review this function
 void	ft_lstclear(t_list **lst)
 {
 	t_list	*temp;
@@ -38,7 +37,7 @@ void	ft_lstclear(t_list **lst)
 	while (current)
 	{
 		temp = current->next;
-		free(current);  // No need to free data since it's an int, not a pointer
+		free(current);
 		current = temp;
 	}
 	*lst = NULL;
@@ -80,7 +79,7 @@ t_list *ft_lstnew(int data)
 		return (NULL);
 	
 	new->data = data;
-	new->next = NULL;
+		new->next = NULL;
 	
 	return (new);
 }
@@ -91,6 +90,7 @@ int	get_max_bits(t_list *stack)
 	t_list	*current;
 	int		max_rank;
 	int		max_bits;
+	int		temp;  // Move variable declaration to the beginning
 
 	if (!stack)
 		return (0);
@@ -106,51 +106,14 @@ int	get_max_bits(t_list *stack)
 		current = current->next;
 	}
 	
+
 	// Count the number of bits needed for the max_rank
 	max_bits = 0;
-	int temp = max_rank;
+	temp = max_rank;
 	while (temp > 0)
 	{
-		temp /= 2;  // Divide by 2 instead of bit shifting
+		temp /= 2;
 		max_bits++;
 	}
-	
 	return (max_bits);
 }
-
-// void	ft_lstadd_back(t_list **lst, t_list *new)
-// {
-// 	t_list	*last;
-
-// 	if (!lst || !new)
-// 		return;
-	
-// 	if (!*lst)
-// 	{
-// 		*lst = new;
-// 		return;
-// 	}
-	
-// 	last = *lst;
-// 	while (last->next)
-// 		last = last->next;
-	
-// 	last->next = new;
-// }
-
-/*int	main()*/
-/*	t_list *head = NULL;*/
-/*	head = malloc(sizeof(t_list));*/
-/*	head->data = 0;*/
-/*	head->next = NULL;*/
-/*	t_list *ptr = NULL;*/
-/*	ptr = malloc(sizeof(t_list));*/
-/*	ptr = head;*/
-/*	ptr = add_to_end_of_node(ptr, 10);*/
-/*	ptr = add_to_end_of_node(ptr, 20);*/
-/*	add_to_node(head, 30);*/
-/*	add_to_point_of_node(head, 5, 40);*/
-/*	add_to_point_of_node(head, 6, 50);*/
-/*	delete_last_node(head);*/
-/*	print_nodes(head);*/
-/*}*/

@@ -73,21 +73,6 @@ int	check_string_characters(char	*string)
 	return (1);
 }
 
-// Function to count nodes in a linked list
-static int  ft_lstsize(t_list *lst)
-{
-    int size;
-
-    size = 0;
-    while (lst)
-    {
-        size++;
-        lst = lst->next;
-    }
-    return (size);
-}
-
-// Function to assign ranks to stack elements
 void    assign_ranks(t_list *stack)
 {
     t_list  *current;

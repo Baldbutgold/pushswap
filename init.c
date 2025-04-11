@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "libft/libft.h"
 
-static int	check_empty_and_spaces(char **av)
+int	check_empty_and_spaces(char **av)
 {
 	int	i;
 
@@ -15,7 +15,7 @@ static int	check_empty_and_spaces(char **av)
 	return (TRUE);
 }
 
-static int	check_numbers_and_duplicates(char **arr)
+int	check_numbers_and_duplicates(char **arr)
 {
 	int	i;
 	int	j;
@@ -72,6 +72,5 @@ t_list	*init_stack(int ac, char **av)
 	stack_a = array_to_linked_list(arr);
 	free_grid(arr);
 	assign_ranks(stack_a);
-
 	return (stack_a);
 }
