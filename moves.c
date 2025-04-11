@@ -25,7 +25,6 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-
 void	ft_lstclear(t_list **lst)
 {
 	t_list	*temp;

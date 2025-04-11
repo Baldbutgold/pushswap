@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-
 void	ft_printlst(t_list *head)
 {
 	t_list	*ptr;
