@@ -1,6 +1,6 @@
 #------------------ Srcs & Objs -------------------#
 
-SRCS = push_swap.c utils.c ft_atoi_push.c linked.c moves.c init.c
+SRCS = push_swap.c utils.c ft_atoi_push.c utils_2.c moves.c init.c
 OBJS = $(SRCS:.c=.o)
 
 #----------------- Constant namings ---------------------#

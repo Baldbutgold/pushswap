@@ -14,14 +14,13 @@
 
 int	ft_atoi_push(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	num;
-	int	sign;
+	int		sign;
 
 	i = 0;
 	num = 0;
 	sign = 1;
-	//I don't think I will need this function
 	while (ft_isspace(nptr[i]))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')

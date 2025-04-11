@@ -25,17 +25,6 @@ int	ft_lstsize(t_list *lst)
 	return (count);
 }
 
-void	ft_printlst(t_list *head)
-{
-	t_list *ptr;
-
-	ptr = head;
-	while (ptr)
-	{
-		ft_printf("%d", ptr->rank);
-		ptr = ptr->next;
-	}
-}
 
 void	ft_lstclear(t_list **lst)
 {
@@ -43,7 +32,7 @@ void	ft_lstclear(t_list **lst)
 	t_list	*current;
 
 	if (!lst || !*lst)
-		return;
+		return ;
 	current = *lst;
 	while (current)
 	{
@@ -54,14 +43,14 @@ void	ft_lstclear(t_list **lst)
 	*lst = NULL;
 }
 
-t_list *array_to_linked_list(char **arr)
+t_list	*array_to_linked_list(char **arr)
 {
-	t_list *stack;
-	t_list *tail;
-	t_list *new_node;
-	int num;
-	int i;
-	
+	t_list	*stack;
+	t_list	*tail;
+	t_list	*new_node;
+	int		num;
+	int		i;
+
 	stack = NULL;
 	tail = NULL;
 	i = 0;
@@ -81,10 +70,10 @@ t_list *array_to_linked_list(char **arr)
 	return (stack);
 }
 
-t_list *ft_lstnew(int data)
+t_list	*ft_lstnew(int data)
 {
-	t_list *new;
-	
+	t_list	*new;
+
 	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);

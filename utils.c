@@ -14,10 +14,10 @@
 
 char	**return_string(int ac, char **av)
 {
-	char		*numbers;
-	char		*temp;
-	char		**arr;
-	int			i;
+	char	*numbers;
+	char	*temp;
+	char	**arr;
+	int		i;
 
 	numbers = ft_strdup(av[1]);
 	i = 2;
@@ -35,7 +35,7 @@ char	**return_string(int ac, char **av)
 	return (arr);
 }
 
-int	check_string_space(char	*string)
+int	check_string_space(char *string)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	check_string_space(char	*string)
 	return (1);
 }
 
-int	check_string_characters(char	*string)
+int	check_string_characters(char *string)
 {
 	int	i;
 	int	only_sign;
@@ -72,28 +72,26 @@ int	check_string_characters(char	*string)
 	return (1);
 }
 
-void    assign_ranks(t_list *stack)
+void	assign_ranks(t_list *stack)
 {
-    t_list  *current;
-    t_list  *compare;
-    int     size;
-    int     rank;
+	t_list	*current;
+	t_list	*compare;
+	int		size;
+	int		rank;
 
-    size = ft_lstsize(stack);
-    current = stack;
-    while (current)
-    {
-        rank = 0;
-        compare = stack;
-        while (compare)
-        {
-            if (current->data > compare->data)
-                rank++;
-            compare = compare->next;
-        }
-        current->rank = rank;
-
-        current = current->next;
-
-    }
+	size = ft_lstsize(stack);
+	current = stack;
+	while (current)
+	{
+		rank = 0;
+		compare = stack;
+		while (compare)
+		{
+			if (current->data > compare->data)
+				rank++;
+			compare = compare->next;
+		}
+		current->rank = rank;
+		current = current->next;
+	}
 }

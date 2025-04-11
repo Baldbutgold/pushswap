@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft/libft.h"
+#include "push_swap.h"
 
 int	main(int ac, char **av)
 {
@@ -25,6 +25,5 @@ int	main(int ac, char **av)
 	get_max_bits(stack_a);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
-
 	return (0);
 }
