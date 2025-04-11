@@ -97,19 +97,3 @@ struct node *add_to_head(struct node *old_head, int data)
 	new_head->next = old_head;
 	return (new_head);
 }
-
-void	print_nodes(struct node *head)
-{
-	struct node *ptr;
-	int	count;
-
-	ptr = NULL;
-	ptr = malloc(sizeof(struct node));
-	ptr = head;
-	while (ptr)
-	{
-		printf("%d\n", ptr->data);
-		ptr = ptr->next;
-	}
-}
-

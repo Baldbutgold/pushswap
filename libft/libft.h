@@ -23,6 +23,9 @@
 #  define BUFFER_SIZE 42
 # endif
 
+# define TRUE 1
+# define FALSE 0
+
 char	*get_next_line(int fd);
 
 /* added functions just for fun */

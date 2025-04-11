@@ -12,13 +12,6 @@
 
 #include "push_swap.h"
 
-int	ft_isspace(int c)
-{
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
-}
-
 int	ft_atoi_push(const char *nptr)
 {
 	int	i;
