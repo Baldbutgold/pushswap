@@ -7,6 +7,10 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Initialize counters for passed and total tests
+passed_tests=0
+total_tests=0
+
 # Function to print test header
 print_header() {
     echo -e "\n${BLUE}===== $1 =====${NC}"
@@ -18,31 +22,35 @@ run_test() {
     local command="$2"
     local expected_output="$3"
     local expected_exit_code="$4"
-    
+
     echo -e "${YELLOW}Testing: $test_name${NC}"
     echo -e "Command: $command"
-    
+
     # Run the command and capture output and exit code
     output=$(eval "$command" 2>&1)
     exit_code=$?
-    
+
     # Check if the output matches the expected output
     if [[ "$output" == "$expected_output" ]]; then
         output_match=true
     else
         output_match=false
     fi
-    
+
     # Check if the exit code matches the expected exit code
     if [[ $exit_code == $expected_exit_code ]]; then
         exit_match=true
     else
         exit_match=false
     fi
-    
-    # Print result
+
+    # Increment total tests
+    ((total_tests++))
+
+    # Print result and increment passed tests if successful
     if [[ $output_match == true && $exit_match == true ]]; then
         echo -e "${GREEN}✓ PASS${NC}"
+        ((passed_tests++))
     else
         echo -e "${RED}✗ FAIL${NC}"
         if [[ $output_match == false ]]; then
@@ -188,4 +196,5 @@ check_leaks "INT_MIN" "./push_swap 99 -2147483648 23 545"
 # Check for leaks with mixed strings and integers
 check_leaks "Mixed strings and integers" "./push_swap \"1 2 4 3\" 76 90 \"348 05\""
 
-echo -e "\n${BLUE}All tests completed!${NC}" 
+echo -e "\n${BLUE}All tests completed!${NC}"
+echo -e "${GREEN}Tests passed: $passed_tests/$total_tests${NC}"

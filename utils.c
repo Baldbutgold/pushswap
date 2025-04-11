@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
 
 char	**return_string(int ac, char **av)
 {
@@ -70,4 +71,45 @@ int	check_string_characters(char	*string)
 	if (only_sign == 1 && i == 1)
 		return (0);
 	return (1);
+}
+
+// Function to count nodes in a linked list
+static int  ft_lstsize(t_list *lst)
+{
+    int size;
+
+    size = 0;
+    while (lst)
+    {
+        size++;
+        lst = lst->next;
+    }
+    return (size);
+}
+
+// Function to assign ranks to stack elements
+void    assign_ranks(t_list *stack)
+{
+    t_list  *current;
+    t_list  *compare;
+    int     size;
+    int     rank;
+
+    size = ft_lstsize(stack);
+    current = stack;
+    while (current)
+    {
+        rank = 0;
+        compare = stack;
+        while (compare)
+        {
+            if (current->data > compare->data)
+                rank++;
+            compare = compare->next;
+        }
+        current->rank = rank;
+
+        current = current->next;
+
+    }
 }

@@ -22,7 +22,12 @@ int	main(int ac, char **av)
 	if (!stack_a)
 		return (0);
 	stack_b = NULL;
-	//ft_printlst(stack_a);
+		
+	// Print the stack with ranks (already assigned in init_stack)
+ft_printlst(stack_a);
+	
+	// TODO: Implement radix sort using the ranks
+	
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
 	return (0);

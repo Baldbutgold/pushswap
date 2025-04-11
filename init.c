@@ -25,7 +25,7 @@ static int	check_numbers_and_duplicates(char **arr)
 	i = 0;
 	while (arr[i])
 	{
-		if (!check_string_characters(arr[i]) || ft_atoi_push(arr[i]) == FALSE)
+		if (!check_string_characters(arr[i]) || !ft_atoi_push(arr[i]))
 			return (FALSE);
 		j = i + 1;
 		num1 = ft_atoi_push(arr[i]);
@@ -71,5 +71,7 @@ t_list	*init_stack(int ac, char **av)
 		return (NULL);
 	stack_a = array_to_linked_list(arr);
 	free_grid(arr);
+	assign_ranks(stack_a);
+
 	return (stack_a);
-} 
+}
