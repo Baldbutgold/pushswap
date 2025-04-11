@@ -49,5 +49,14 @@ t_list				*array_to_linked_list(char **arr);
 void				assign_ranks(t_list *stack);
 int					get_max_bits(t_list *stack);
 char				**init_check(int ac, char **av);
+int					is_sorted(t_list *stack);
+void				pa(t_list **stack_a, t_list **stack_b);
+void				pb(t_list **stack_a, t_list **stack_b);
+void				ra(t_list **stack_a);
+void				rb(t_list **stack_b);
+void				sa(t_list **stack_a);
+void				sb(t_list **stack_b);
+void				rra(t_list **stack_a);
+void				rrb(t_list **stack_b);
 
 #endif

@@ -38,3 +38,19 @@ int	get_max_bits(t_list *stack)
 	}
 	return (max_bits);
 }
+
+int	is_sorted(t_list *stack)
+{
+	t_list	*current;
+
+	if (!stack || !stack->next)
+		return (1);  // Empty stack or single element stack is considered sorted
+	current = stack;
+	while (current->next)
+	{
+		if (current->rank > current->next->rank)
+			return (0);  // Not sorted
+		current = current->next;
+	}
+	return (1);  // Sorted
+}
