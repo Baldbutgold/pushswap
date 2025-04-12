@@ -6,7 +6,7 @@
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:11:45 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/04/12 14:45:14 by ael-hadj         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:20:16 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	check_numbers_and_duplicates(char **arr)
 	while (arr[i])
 	{
 		if (!check_string_characters(arr[i]) || !ft_atoi_push(arr[i]))
-			return (ft_printf("I am here"),FALSE);
+			return (FALSE);
 		j = i + 1;
 		num1 = ft_atoi(arr[i]);
 		while (arr[j])
