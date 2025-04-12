@@ -51,6 +51,7 @@ char	**init_check(int ac, char **av)
 	arr = return_string(ac, av);
 	if (!arr)
 		return (NULL);
+		//error is here for zero
 	if (!check_numbers_and_duplicates(arr))
 	{
 		free_grid(arr);

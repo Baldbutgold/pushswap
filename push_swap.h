@@ -68,4 +68,7 @@ void				sort_five(t_list **stack_a, t_list **stack_b);
 int					find_min_rank(t_list *stack);
 int					find_position(t_list *stack, int rank);
 
+/* ----- RADIX SORT ----- */
+void				radix_sort(t_list **stack_a, t_list **stack_b);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:11:45 by ael-hadj          #+#    #+#             */
-/*   Updated: 2025/04/11 22:18:53 by ael-hadj         ###   ########.fr       */
+/*   Updated: 2025/04/12 14:45:14 by ael-hadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ int	check_numbers_and_duplicates(char **arr)
 	while (arr[i])
 	{
 		if (!check_string_characters(arr[i]) || !ft_atoi_push(arr[i]))
-			return (FALSE);
+			return (ft_printf("I am here"),FALSE);
 		j = i + 1;
-		num1 = ft_atoi_push(arr[i]);
+		num1 = ft_atoi(arr[i]);
 		while (arr[j])
 		{
-			num2 = ft_atoi_push(arr[j]);
+			num2 = ft_atoi(arr[j]);
 			if (num1 == num2)
 				return (FALSE);
 			j++;
@@ -90,7 +90,7 @@ int	ft_atoi_push(const char *nptr)
 			return (FALSE);
 		i++;
 	}
-	return ((int)num * sign);
+	return (TRUE);
 }
 
 int	check_string_characters(char *string)
@@ -107,7 +107,7 @@ int	check_string_characters(char *string)
 	}
 	while (string[i])
 	{
-		if (ft_isdigit(string[i]) == 0)
+		if (ft_isdigit(string[i]) == FALSE)
 			return (0);
 		i++;
 	}
