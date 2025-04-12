@@ -44,13 +44,13 @@ int	is_sorted(t_list *stack)
 	t_list	*current;
 
 	if (!stack || !stack->next)
-		return (1);  // Empty stack or single element stack is considered sorted
+		return (1);
 	current = stack;
 	while (current->next)
 	{
 		if (current->rank > current->next->rank)
-			return (0);  // Not sorted
+			return (0);
 		current = current->next;
 	}
-	return (1);  // Sorted
+	return (1);
 }

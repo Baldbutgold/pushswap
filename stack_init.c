@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ael-hadj <ael-hadj@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/12 15:51:42 by ael-hadj          #+#    #+#             */
+/*   Updated: 2025/04/12 15:51:45 by ael-hadj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_list	*array_to_linked_list(char **arr)
@@ -42,6 +54,7 @@ t_list	*init_stack(int ac, char **av)
 	assign_ranks(stack_a);
 	return (stack_a);
 }
+
 char	**init_check(int ac, char **av)
 {
 	char	**arr;
@@ -51,7 +64,6 @@ char	**init_check(int ac, char **av)
 	arr = return_string(ac, av);
 	if (!arr)
 		return (NULL);
-		//error is here for zero
 	if (!check_numbers_and_duplicates(arr))
 	{
 		free_grid(arr);
