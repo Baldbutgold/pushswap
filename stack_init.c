@@ -65,10 +65,8 @@ void	assign_ranks(t_list *stack)
 {
 	t_list	*current;
 	t_list	*compare;
-	int		size;
 	int		rank;
 
-	size = ft_lstsize(stack);
 	current = stack;
 	while (current)
 	{

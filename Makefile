@@ -16,7 +16,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = cc
 RM = rm -f
-#CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 LIB_INC = -Ilibft
 
 #------------------ Library Paths ------------------#
