@@ -59,4 +59,13 @@ void				sb(t_list **stack_b);
 void				rra(t_list **stack_a);
 void				rrb(t_list **stack_b);
 
+/* ----- SMALL STACK SORTING FUNCTIONS ----- */
+void				sort_small(t_list **stack_a, t_list **stack_b);
+void				sort_two(t_list **stack_a);
+void				sort_three(t_list **stack_a);
+void				sort_four(t_list **stack_a, t_list **stack_b);
+void				sort_five(t_list **stack_a, t_list **stack_b);
+int					find_min_rank(t_list *stack);
+int					find_position(t_list *stack, int rank);
+
 #endif

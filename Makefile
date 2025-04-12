@@ -5,7 +5,9 @@ SRCS = main.c \
        input_parsing.c \
        list_utils.c \
        stack_init.c \
-       sort_utils.c
+       sort_utils.c \
+	   sort_small.c \
+	   operations.c
 
 OBJS = $(SRCS:.c=.o)
 
